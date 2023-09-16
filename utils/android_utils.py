@@ -1,6 +1,6 @@
 from utils import device_info
 
-def android_get_desired_capabilities():
+def android_get_desired_capabilities() -> dict:
     return {
         'autoGrantPermissions': True,
         'automationName': 'uiautomator2',

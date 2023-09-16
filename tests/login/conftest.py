@@ -3,5 +3,5 @@ import pytest
 from framework.login_page import LoginPage
 
 @pytest.fixture(scope='function')
-def user_login_fixture(driver):
+def user_login_fixture(driver) -> LoginPage:
     yield LoginPage(driver)

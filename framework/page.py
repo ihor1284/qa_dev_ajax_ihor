@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.remote.webdriver import WebElement
 from selenium.webdriver.support import expected_conditions as EC
 
+from typing import List
 from time import sleep
 
 class Page:
@@ -19,7 +20,7 @@ class Page:
         """
         return self.wait.until(EC.presence_of_element_located((by, link)))
     
-    def find_elements(self, by: MobileBy, link: str = None) -> WebElement:
+    def find_elements(self, by: MobileBy, link: str = None) -> List[WebElement]:
         """
         Find and return a list of WebElements located by the given strategy and link text.
         

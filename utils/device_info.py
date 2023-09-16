@@ -1,6 +1,7 @@
 import subprocess
+from typing import Union
 
-def get_udid():
+def get_udid() -> Union[str, None]:
     """
     Retrieves the unique device identifier (UDID) using the Android Debug Bridge (ADB).
 
@@ -20,7 +21,7 @@ def get_udid():
     
     return None
 
-def get_android_version():
+def get_android_version() -> Union[str, None]:
     """
     Get the version of the Android operating system.
 
