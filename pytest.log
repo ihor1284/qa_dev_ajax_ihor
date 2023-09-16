@@ -1,0 +1,6 @@
+2023-09-16 16:47:57 [CRITICAL] START_TEST email: test_@mail.com, password: teststest, result: False (test_login.py:29)
+2023-09-16 16:48:16 [CRITICAL] END_TEST email: test_@mail.com, password: teststest, result: False (test_login.py:31)
+2023-09-16 16:48:16 [CRITICAL] START_TEST email: aaaabbbbccc, password: teststest, result: False (test_login.py:29)
+2023-09-16 16:48:35 [CRITICAL] END_TEST email: aaaabbbbccc, password: teststest, result: False (test_login.py:31)
+2023-09-16 16:48:35 [CRITICAL] START_TEST email: qa.ajax.app.automation@gmail.com, password: qa_automation_password, result: True (test_login.py:29)
+2023-09-16 16:48:46 [CRITICAL] END_TEST email: qa.ajax.app.automation@gmail.com, password: qa_automation_password, result: True (test_login.py:31)
