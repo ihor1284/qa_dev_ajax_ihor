@@ -1,8 +1,9 @@
-from appium.webdriver.common.mobileby import MobileBy
 from appium.webdriver.webdriver import WebDriver
-from selenium.webdriver.remote.webdriver import WebElement
+from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.remote.webdriver import WebElement
 from selenium.webdriver.support import expected_conditions as EC
+
 from time import sleep
 
 class Page:
