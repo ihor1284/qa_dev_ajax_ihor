@@ -1,39 +1,24 @@
 import subprocess
-from typing import Union
 
-def get_udid() -> Union[str, None]:
+def get_udid() -> str:
     """
-    Retrieves the unique device identifier (UDID) using the Android Debug Bridge (ADB).
+    Retrieves the Unique Device Identifier (UDID) of the connected Android device.
 
-    Returns:
-        str: The UDID of the connected device.
-
-    Raises:
-        subprocess.CalledProcessError: If there is an error while calling the `adb devices` command.
+    :return: The UDID of the connected Android device as a string.
     """
-    try:
-        result = subprocess.check_output(['adb', 'devices']).decode('utf-8')
-        udid = result.strip().split('\n')[1].split('\t')[0]
+    result = subprocess.check_output(['adb', 'devices']).decode('utf-8')
+    udid = result.strip().split('\n')[1].split('\t')[0]
 
-        return udid
-    except subprocess.CalledProcessError as e:
-        print(f'Error call adb: {e}')
+    return udid
+
+def get_android_version() -> str:
+    """
+    Returns the Android version of the device.
+
+    :return: A string representing the Android version.
+    :rtype: str
+    """
+    android_version = subprocess.check_output(['adb', 'shell', 'getprop', 'ro.build.version.release']).decode('utf-8').strip()
     
-    return None
+    return android_version
 
-def get_android_version() -> Union[str, None]:
-    """
-    Get the version of the Android operating system.
-
-    :return: The version of the Android operating system as a string.
-    :rtype: str or None
-    """
-    try:
-        android_version = subprocess.check_output(['adb', 'shell', 'getprop', 'ro.build.version.release']).decode('utf-8').strip()
-        
-        return android_version
-
-    except subprocess.CalledProcessError as e:
-        print(f'Error call adb: {e}')
-    
-    return None
